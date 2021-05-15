@@ -1,42 +1,27 @@
 <?php
 include_once 'MyList.php';
+$randomCountPush = random_int(1,10);
 $arr = [0,1,2,3,4];
 $arr1 = [5,6,7,8,9,10];
 $mylist = new MyList(10,$arr);
-$mylist1 = new MyList(10,$arr1);
-$mylist->add(3);
-$mylist->add(4);
-$mylist->add(4);
-$mylist->add(4);
-$mylist->add(4);
-$mylist->add(4);
-echo $mylist->getCount().'<hr>';
+
+for ($i = 0; $i < $randomCountPush; $i++){
+    $randomNum = random_int(10,20);
+    $mylist->add($randomNum);
+}
+
+
+echo 'ArrayLength: '.$mylist->getCount().'<hr>';
 
 echo '<pre>';
 print_r($mylist);
 echo '</pre>'.'<hr>';
+
 $mylist->reset();
 echo "==============>RESET ";
 echo '<pre>';
 print_r($mylist);
 echo '</pre>'.'<hr>';
-//--------------------------
-$mylist1->add(3);
-$mylist1->add(4);
-$mylist1->add(4);
-$mylist1->add(4);
-$mylist1->add(4);
-$mylist1->add(4);
-echo $mylist1->getCount().'<hr>';
-
-echo '<pre>';
-print_r($mylist1);
-echo '</pre>'.'<hr>';
-$mylist1->reset();
-echo "==============>RESET ";
-echo '<pre>';
-print_r($mylist1);
-echo '</pre>';
 
 
 

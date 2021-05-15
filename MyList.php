@@ -4,22 +4,17 @@ class MyList
 {
     public int $size;
     public array $elements;
-    public bool $isOrigin;
     public array $originElements;
-    public array $arr;
 
     public function __construct(int $size, $arr = [])
     {
         if (is_array($arr)) {
             $this->elements = $arr;
-            $this->isOrigin = true;
             $this->originElements = $arr;
             $this->size = $size;
         } else {
-            $this->size = $size;
-            $this->elements = [];
-            $this->isOrigin = false;
-            $this->originElements = [];
+            echo "Input type is not supported";
+            die();
         }
     }
 
